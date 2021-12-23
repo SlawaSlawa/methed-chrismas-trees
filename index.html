@@ -38,8 +38,12 @@
     <link rel="stylesheet" href="./style/pay.css">
     <link rel="stylesheet" href="./style/option-pay.css">
     <link rel="stylesheet" href="./style/footer.css">
+    <link rel="stylesheet" href="./style/overlay.css">
+    <link rel="stylesheet" href="./style/modal.css">
 
-    <script src="snow/snow.js" defer></script>
+    <!-- <script src="snow/snow.js" defer></script> -->
+    <script src="./script/burger.js" defer></script>
+    <script src="./script/modal.js" defer></script>
 </head>
 
 <body>
@@ -57,16 +61,16 @@
             <nav class="header__navigation navigation">
                 <ul class="navigation__list">
                     <li class="navigation__item">
-                        <a href="#" class="navigation__link">Пихта Фразера</a>
+                        <a href="#one" class="navigation__link">Пихта Фразера</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="#" class="navigation__link">Русская ель</a>
+                        <a href="#two" class="navigation__link">Русская ель</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="#" class="navigation__link">Сибирская пихта</a>
+                        <a href="#three" class="navigation__link">Сибирская пихта</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="#" class="navigation__link">Как оплатить?</a>
+                        <a href="#pay" class="navigation__link">Как оплатить?</a>
                     </li>
                 </ul>
             </nav>
@@ -135,7 +139,7 @@
                     </p>
 
                     <div class="product__button-wrapper">
-                        <button class="product__button product_order">
+                        <button class="product__button product_order" data-order="Пихта Фразера">
                             Заказать
                         </button>
                         <a href="#" class="product__button product_more">
@@ -166,7 +170,7 @@
                     </p>
 
                     <div class="product__button-wrapper">
-                        <button class="product__button product_order">
+                        <button class="product__button product_order" data-order="Русская ель">
                             Заказать
                         </button>
                         <a href="#" class="product__button product_more">
@@ -198,7 +202,7 @@
                     </p>
 
                     <div class="product__button-wrapper">
-                        <button class="product__button product_order">
+                        <button class="product__button product_order" data-order="Сибирская пихта">
                             Заказать
                         </button>
                         <a href="#" class="product__button product_more">
@@ -213,7 +217,7 @@
             </div>
         </section>
         <!-- /.product -->
-        <section class="pay">
+        <section class="pay" id="pay">
             <div class="container">
                 <h2 class="pay__title">
                     Как можно оплатить
@@ -363,6 +367,45 @@
         </div>
     </footer>
 
+    <div class="overlay overlay_order">
+        <div class="modal">
+
+            <button class="modal__close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+                        fill="currentColor" />
+                </svg>
+            </button>
+
+            <h2 class="modal__title">
+                Оформить заказ
+            </h2>
+
+            <form action="https://jsonplaceholder.typicode.com/posts" class="modal__form" method="post">
+                <label class="modal__label">
+                    <span class="modal__label-text">ФИО</span>
+                    <input type="text" placeholder="Введите ваше ФИО" class="modal__input" name="bio" required>
+                </label>
+
+                <label class="modal__label modal__label-last">
+                    <span class="modal__label-text">Телефон</span>
+                    <input type="tel" placeholder="Введите ваш номер телефона" class="modal__input" name="tel" required>
+                </label>
+
+                <input class="modal__order" type="hidden" name="order">
+
+                <button class="modal__button">
+                    Заказать звонок
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay overlay_consultation">
+        <div class="modal"></div>
+    </div>
+
     <svg class="hide">
         <symbol id="logo" width="164" height="76" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -389,7 +432,6 @@
                     fill="#925C34" />
             </g>
         </symbol>
-
     </svg>
 </body>
 
