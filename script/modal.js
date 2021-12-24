@@ -5,6 +5,7 @@ const overlayOrder = document.querySelector('.overlay_order')
 const order = overlayOrder.querySelector('.modal__order')
 
 const overlayConsultation = document.querySelector('.overlay_consultation')
+const modalConsultation = overlayConsultation.querySelector('.modal__consultation')
 
 buttonsOrder.forEach(buttonOrder => {
     buttonOrder.addEventListener('click', () => {
@@ -23,6 +24,8 @@ overlayOrder.addEventListener('click', (evt) => {
 
 buttonConsultation.addEventListener('click', () => {
     overlayConsultation.classList.add('overlay_active')
+    modalConsultation.value = buttonConsultation.dataset.consultation
+    console.log('buttonConsultation.dataset.consultation: ', buttonConsultation.dataset.consultation);
 })
 
 overlayConsultation.addEventListener('click', (evt) => {

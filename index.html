@@ -75,7 +75,7 @@
                 </ul>
             </nav>
 
-            <button class="header__consultation">
+            <button class="header__consultation" data-consultation="Консультация">
                 Консультация
             </button>
         </div>
@@ -414,7 +414,7 @@
             </button>
 
             <h2 class="modal__title">
-                Консультация
+                Заказать Консультацию
             </h2>
 
             <form action="https://jsonplaceholder.typicode.com/posts" class="modal__form" method="post">
@@ -428,7 +428,7 @@
                     <input type="tel" placeholder="Введите ваш номер телефона" class="modal__input" name="tel" required>
                 </label>
 
-                <input class="modal__order" type="hidden" name="order">
+                <input class="modal__consultation" type="hidden" name="order">
 
                 <button class="modal__button">
                     Заказать звонок
