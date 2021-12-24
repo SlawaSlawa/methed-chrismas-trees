@@ -25,7 +25,6 @@ overlayOrder.addEventListener('click', (evt) => {
 buttonConsultation.addEventListener('click', () => {
     overlayConsultation.classList.add('overlay_active')
     modalConsultation.value = buttonConsultation.dataset.consultation
-    console.log('buttonConsultation.dataset.consultation: ', buttonConsultation.dataset.consultation);
 })
 
 overlayConsultation.addEventListener('click', (evt) => {
